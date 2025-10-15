@@ -10,11 +10,11 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
     "customEditors": [
     {
-      "viewType": "reqs.editor",
+      "viewType": "reqsEditor",
       "displayName": "Requirements Editor",
       "selector": [{ "filenamePattern": "*.reqs.json" }],
       "priority": "default"
