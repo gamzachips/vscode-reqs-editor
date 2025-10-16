@@ -1,7 +1,14 @@
 [
   {
     "id": "REQ-001",
-    "text": "사용자는 로그인할 수 있어야 한다.",
-    "status": "Draft"
+    "parentId": null,
+    "text": "사용자는 시스템에 로그인할 수 있어야 한다.",
+    "status": "Approved"
+  },
+  {
+    "id": "REQ-002",
+    "parentId": "REQ-001",
+    "text": "사용자 ID와 비밀번호를 통해 인증해야 한다.",
+    "status": "Approved"
   }
 ]

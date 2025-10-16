@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      table, th, td {
+        border: 1px solid #555;
+        border-collapse : collapse;
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      th, td {
+        padding: 8px;
+        word-wrap:break-word;
+      }
+
+      th {
+        background-color:#333;
+        color:#fff;
+      }
+
+      tr:nth-child(even)
+      {
+        background-color:#2a2a2a;
+      }
+
+      th:nth-child(1), td:nth-child(1) { width: 15%; } /* ID */
+      th:nth-child(2), td:nth-child(2) { width: 55%; }  /* 내용 */
+      th:nth-child(3), td:nth-child(3) { width: 15%; } /* 상태 */
+      th:nth-child(4), td:nth-child(4) { width: 15%; } /* 동작 */ 
+      
+    </style>
+  </head>
+  <body>
+    <table>
+      <thread>
+        <tr><th>ID</th><th>내용</th><th>상태</th><th>동작</th></tr>
+      </thread>
+      <tbody id="reqBody"></tbody>
+    </table>
+    <script src="{{mainScript}}"></script>
+  </body>
+</html>
