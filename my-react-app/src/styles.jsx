@@ -24,7 +24,7 @@ const styles = {
   cell: {
     padding: "10px 12px",
     verticalAlign: "middle",
-    wordBreak: "keep-all",
+    wordBreak: "break-all",
     whiteSpace: "normal", 
     lineHeight: "1.6em",
     minHeight: "44px",
