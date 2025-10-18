@@ -33,11 +33,22 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h2>요구사항 목록</h2>
+  <div
+    style={{
+      margin: 0,
+      padding: 0,
+      width: "100%",
+      height: "100%",              
+      backgroundColor: "#1e1e1e", 
+      boxSizing: "border-box",
+    }}
+  >
+    <div style={{ padding: "16px" }}>
       <RequirementTable data={data} />
     </div>
-  );
+  </div>
+);
+
 }
 
 export default App;
