@@ -66,7 +66,7 @@ button:focus-visible {
 table {
   border-collapse: collapse;
   width: 100%;
-  table-layout: fixed; /* ✅ 열 너비 고정 */
+  table-layout: fixed;
   background-color: #1e1e1e;
 }
 
@@ -78,8 +78,8 @@ th, td {
   font-size: 14px;
   color: #ddd;
   border-bottom: 1px solid #2a2a2a;
-  white-space: pre-wrap;   /* ✅ 줄바꿈 고정 */
-  word-break: break-word;  /* ✅ 긴 단어 처리 */
+  white-space: pre-wrap;
+  word-break: break-word; 
   line-height: 1.5em;
 }
 
@@ -90,7 +90,7 @@ th {
   color: #ffffff;
 }
 
-/* ✅ hover 시 강조 (VSCode 톤) */
+/* hover 시 강조 */
 tbody tr:hover td {
   background-color: #3a3d41;
   transition: background 0.15s ease, color 0.15s ease;

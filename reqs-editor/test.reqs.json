@@ -29,7 +29,6 @@
     "text": "사용자는 로그인 실패 시 오류 메시지를 확인할 수 있어야 한다.",
     "status": "Approved"
   },
-
   {
     "id": "REQ-006",
     "parentId": null,
@@ -54,7 +53,6 @@
     "text": "복구된 계정은 임시 비밀번호로 로그인하도록 설정되어야 한다.",
     "status": "Draft"
   },
-
   {
     "id": "REQ-010",
     "parentId": null,
@@ -79,7 +77,6 @@
     "text": "비밀번호 입력란은 입력 중 별표(*)로 표시되어야 한다.",
     "status": "Draft"
   },
-
   {
     "id": "REQ-014",
     "parentId": null,

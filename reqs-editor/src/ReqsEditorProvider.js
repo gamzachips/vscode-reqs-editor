@@ -29,14 +29,29 @@ class ReqsEditorProvider
       console.error("JSON 파싱 오류:", err);
     }
 
-    webviewPanel.webview.onDidReceiveMessage((message)=>{
+    webviewPanel.webview.onDidReceiveMessage(async (message)=>{
       switch (message.type)
       {
         case 'ready':
-          webviewPanel.webview.postMessage({type:'init',data});
+          webviewPanel.webview.postMessage({
+            type:'init',
+            data: Array.isArray(data) ? data : [],
+          });
           break;
         case 'hello':
           vscode.window.showInformationMessage(message.text);
+          break;
+        case 'update-requirements':
+          try{
+            const newData = message.payload;
+            const currentFilePath = document.uri.fsPath; 
+            await vscode.workspace.fs.writeFile(
+              vscode.Uri.file(currentFilePath),
+              Buffer.from(JSON.stringify(newData, null, 2), "utf8")
+            );
+          } catch(err){
+              vscode.window.showErrorMessage("Save Error:" + err.message);
+          } 
           break;
       }
     });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function EditableCell({ item, field, styles }) {
+function EditableCell({ item, field, styles, onUpdate }) {
   const [editing, setEditing] = useState(false);
   const [value, setValue] = useState(item[field] || "");
 
@@ -27,10 +27,11 @@ function EditableCell({ item, field, styles }) {
           onBlur={() => {
             item[field] = value;
             setEditing(false);
+            onUpdate?.();
           }}
           onKeyDown={(e) => {
             if (e.key === "Escape") setEditing(false);
-            if (e.key === "Enter") e.target.blur();
+            if (e.key === "Enter"){ e.target.blur(); }
           }}
           autoFocus
           style={{

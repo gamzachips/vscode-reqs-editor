@@ -5,4 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './',
+  optimizeDeps: {
+    include: ["react", "react-dom"],
+  },
+  resolve: {
+    dedupe: ["react", "react-dom"],  // React 중복 방지
+  },
 })
+
