@@ -1,92 +1,62 @@
 [
   {
-    "id": "REQ-001",
-    "parentId": null,
-    "text": "사용자는 시스템에 로그인할 수 있어야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-002",
-    "parentId": "REQ-001",
-    "text": "사용자 ID와 비밀번호를 통해 인증해야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-003",
-    "parentId": "REQ-002",
-    "text": "비밀번호는 8자 이상이며 숫자와 특수문자를 포함해야 한다.",
-    "status": "Draft"
-  },
-  {
-    "id": "REQ-004",
-    "parentId": "REQ-002",
-    "text": "비밀번호는 90일마다 변경해야 한다.",
-    "status": "In Review"
-  },
-  {
-    "id": "REQ-005",
-    "parentId": "REQ-001",
-    "text": "사용자는 로그인 실패 시 오류 메시지를 확인할 수 있어야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-006",
-    "parentId": null,
-    "text": "관리자는 사용자 계정을 생성, 수정, 삭제할 수 있어야 한다.",
-    "status": "Pending"
-  },
-  {
-    "id": "REQ-007",
-    "parentId": "REQ-006",
-    "text": "관리자는 계정 생성 시 초기 비밀번호를 설정할 수 있어야 한다.",
-    "status": "Draft"
-  },
-  {
-    "id": "REQ-008",
-    "parentId": "REQ-006",
-    "text": "관리자는 비활성화된 계정을 복구할 수 있어야 한다.",
-    "status": "In Review"
-  },
-  {
-    "id": "REQ-009",
-    "parentId": "REQ-008",
-    "text": "복구된 계정은 임시 비밀번호로 로그인하도록 설정되어야 한다.",
-    "status": "Draft"
-  },
-  {
-    "id": "REQ-010",
-    "parentId": null,
-    "text": "시스템은 보안을 유지해야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-011",
-    "parentId": "REQ-010",
-    "text": "모든 로그인 시도는 로그로 기록되어야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-012",
-    "parentId": "REQ-010",
-    "text": "5회 연속 로그인 실패 시 계정이 잠겨야 한다.",
-    "status": "Approved"
-  },
-  {
-    "id": "REQ-013",
-    "parentId": "REQ-010",
-    "text": "비밀번호 입력란은 입력 중 별표(*)로 표시되어야 한다.",
-    "status": "Draft"
-  },
-  {
     "id": "REQ-014",
     "parentId": null,
     "text": "사용자는 알림 설정을 변경할 수 있어야 한다.",
     "status": "Pending"
   },
   {
-    "id": "REQ-015",
+    "id": "REQ-023",
     "parentId": "REQ-014",
-    "text": "사용자는 이메일과 SMS 중 알림 수단을 선택할 수 있어야 한다.",
-    "status": "In Review"
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-025",
+    "parentId": null,
+    "text": "새로운 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-026",
+    "parentId": "REQ-014",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-037",
+    "parentId": "REQ-014",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-044",
+    "parentId": "REQ-023",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-045",
+    "parentId": "REQ-044",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-046",
+    "parentId": "REQ-045",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-047",
+    "parentId": "REQ-026",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-048",
+    "parentId": null,
+    "text": "새로운 요구사항을 입력하세요.",
+    "status": "Draft"
   }
 ]

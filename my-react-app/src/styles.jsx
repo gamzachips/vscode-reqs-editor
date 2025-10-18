@@ -15,7 +15,7 @@ const styles = {
     color: "#ffffff",
     fontWeight: 600,
     padding: "8px 10px",
-    textAlign: "left",
+    textAlign: "center",
     borderBottom: "2px solid #bfbfbfff",
   },
 

@@ -3,7 +3,7 @@ import EditableCell from "./EditableCell";
 import EditableStatusCell from "./EditableStatusCell";
 import IDCell from "./IDCell";
 
-function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles, onUpdate }) {
+function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles, onUpdate, onAddChild, onDelete }) {
   const bgColor = `rgba(255,255,255,${level * 0.03 + 0.05})`;
 
   return (
@@ -26,8 +26,17 @@ function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, st
 
       {/* 동작 셀 */}
       <td style={{ ...styles.cell, textAlign: "center" }}>
-        <button style={styles.actionButton}>자식 추가</button>
-        <button style={styles.actionButton}>삭제</button>
+        <button style={styles.actionButton}
+        onClick={()=> onAddChild(item.id, level)}
+        >
+          자식 추가
+        </button>
+        <button 
+          style={styles.actionButton}
+          onClick={() => onDelete(item.id)}
+        >
+          삭제
+        </button>
       </td>
     </tr>
   );

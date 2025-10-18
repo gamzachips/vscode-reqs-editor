@@ -2,10 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./styles";
 import RequirementRow from "./RequirementRow";
 
+const MAX_DEPTH = 4;
+
 function RequirementTable({ data: initialData, vscode }) {
   const [data, setData] = useState(null); // null: 아직 파일 못 받음
   const [expanded, setExpanded] = useState(new Set());
   const nextIdRef = useRef(1);
+  const maxDepthRef = useRef(1);
 
   /* 파일 내용 도착 시 초기화 */
   useEffect(() => {
@@ -68,6 +71,54 @@ function RequirementTable({ data: initialData, vscode }) {
     });
   }
 
+    function addChildRequirement(parentId, parentLevel = 0){
+        if (parentLevel + 1 > MAX_DEPTH) {
+            alert(`요구사항은 최대 ${MAX_DEPTH+1}단계까지만 추가할 수 있습니다.`);
+            return;
+        }
+
+        const newItem = {
+            id: generateNewId(),
+            parentId,
+            text: "새로운 하위 요구사항을 입력하세요.",
+            status: "Draft",
+        };
+
+        setData((prev) => {
+        const updated = [...prev, newItem];
+        handleUpdate(updated);
+        return updated;
+        });
+
+        setExpanded((prev) => {
+            const next = new Set(prev);
+            next.add(parentId);
+            return next;
+        });
+    }
+
+    function deleteRequirement(id){
+
+        function collectIdsToDelete(targetId, data){
+            const ids = [targetId];
+            data.forEach((item)=> {
+                if(item.parentId === targetId){
+                    ids.push(...collectIdsToDelete(item.id, data));
+                }
+            });
+            return ids;
+        }
+
+        const idsToDelete = collectIdsToDelete(id, data);
+
+        setData((prev) => {
+            const updated = prev.filter((item) => !idsToDelete.includes(item.id));
+            handleUpdate(updated);
+            return updated;
+        });
+    }
+    
+ 
   /* 행 렌더링 */
   function renderRows(parentId = null, level = 0, visited = new Set()) {
     if (!Array.isArray(data)) return null;
@@ -91,6 +142,8 @@ function RequirementTable({ data: initialData, vscode }) {
               toggleExpand={toggleExpand}
               styles={styles}
               onUpdate={handleUpdate}
+              onAddChild={addChildRequirement}
+              onDelete={deleteRequirement}
             />
             {isExpanded && renderRows(item.id, level + 1, visited)}
           </React.Fragment>
@@ -101,8 +154,6 @@ function RequirementTable({ data: initialData, vscode }) {
   /* ✅ 렌더링 시작 */
   return (
     <div style={{ width: "100%", textAlign: "center" }}>
-      <h2 style={{ color: "#fff", marginBottom: "12px" }}>요구사항 목록</h2>
-
       <button
         onClick={addRootRequirement}
         style={{
@@ -122,7 +173,7 @@ function RequirementTable({ data: initialData, vscode }) {
         <table style={styles.table}>
           <thead>
             <tr>
-              <th style={{ ...styles.headerCell, width: "70px" }}>ID</th>
+              <th style={{ ...styles.headerCell, width: "80px" }}>ID</th>
               <th style={{ ...styles.headerCell, width: "300px" }}>내용</th>
               <th style={{ ...styles.headerCell, width: "80px" }}>상태</th>
               <th style={{ ...styles.headerCell, width: "120px" }}>동작</th>
