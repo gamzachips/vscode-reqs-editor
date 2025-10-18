@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import EditableCell from "./EditableCell";
+import EditableStatusCell from "./EditableStatusCell";
 
 function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles }) {
   const bgColor = `rgba(255,255,255,${level * 0.03 + 0.05})`;
@@ -51,7 +52,7 @@ function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, st
       <EditableCell item={item} field="text" styles={styles} />
 
       {/* 상태 셀 */}
-      <td style={{ ...styles.cell, textAlign: "center" }}>{item.status}</td>
+      <EditableStatusCell item={item} styles={styles} />
 
       {/* 동작 셀 */}
       <td style={{ ...styles.cell, textAlign: "center" }}>
