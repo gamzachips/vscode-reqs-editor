@@ -144,6 +144,7 @@ function RequirementTable({ data: initialData, vscode }) {
               onUpdate={handleUpdate}
               onAddChild={addChildRequirement}
               onDelete={deleteRequirement}
+              maxDepth={MAX_DEPTH}
             />
             {isExpanded && renderRows(item.id, level + 1, visited)}
           </React.Fragment>

@@ -3,8 +3,9 @@ import EditableCell from "./EditableCell";
 import EditableStatusCell from "./EditableStatusCell";
 import IDCell from "./IDCell";
 
-function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles, onUpdate, onAddChild, onDelete }) {
+function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles, onUpdate, onAddChild, onDelete, maxDepth }) {
   const bgColor = `rgba(255,255,255,${level * 0.03 + 0.05})`;
+  const canAddChild = level + 1 <= maxDepth;
 
   return (
     <tr style={{ backgroundColor: bgColor }}>
@@ -25,12 +26,14 @@ function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, st
       <EditableStatusCell item={item} styles={styles} onUpdate={onUpdate} />
 
       {/* 동작 셀 */}
-      <td style={{ ...styles.cell, textAlign: "center" }}>
-        <button style={styles.actionButton}
-        onClick={()=> onAddChild(item.id, level)}
-        >
-          자식 추가
-        </button>
+      <td style={{ ...styles.cell, textAlign: "center" }}>{
+        canAddChild && (
+            <button style={styles.actionButton}
+            onClick={()=> onAddChild(item.id, level)}
+            >
+                자식 추가
+            </button>
+        )}
         <button 
           style={styles.actionButton}
           onClick={() => onDelete(item.id)}
