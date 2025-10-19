@@ -1,0 +1,47 @@
+{
+  "name": "reqs-editor",
+  "displayName": "reqs-editor",
+  "description": "An editor for managing requirements (.reqs.json files)",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./reqs-editor/src/extension.js",
+  "contributes": {
+    "customEditors": [
+    {
+      "viewType": "reqsEditor",
+      "displayName": "Requirements Editor",
+      "selector": [{ "filenamePattern": "*.reqs.json" }],
+      "priority": "default"
+    }
+  ],
+    "commands": [{
+      "command": "reqs.newFile",
+      "title": "New Requirements"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "build": "cd my-react-app && npm run build",
+    "package": "npm run build && vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "eslint": "^9.36.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/gamzachips/vscode-reqs-editor"
+  }
+}
