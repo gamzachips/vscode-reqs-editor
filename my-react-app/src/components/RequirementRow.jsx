@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import EditableCell from "./EditableCell";
-import EditableStatusCell from "./EditableStatusCell";
-import IDCell from "./IDCell";
+import EditableCell from "./Cells/EditableCell.jsx";
+import EditableStatusCell from "./Cells/EditableStatusCell.jsx";
+import IDCell from "./Cells/IDCell.jsx";
 
 function RequirementRow({ item, level, hasChildren, isExpanded, toggleExpand, styles, onUpdate, onAddChild, onDelete, maxDepth }) {
   const bgColor = `rgba(255,255,255,${level * 0.03 + 0.05})`;

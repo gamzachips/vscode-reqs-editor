@@ -1,14 +1,26 @@
 [
   {
-    "id": "REQ-001",
+    "id": "REQ-002",
     "parentId": null,
-    "text": "사용자는 시스템에 로그인할 수 있어야 한다.",
-    "status": "Approved"
+    "text": "새로운 요구사항을 입력하세요.",
+    "status": "Draft"
   },
   {
-    "id": "REQ-002",
-    "parentId": "REQ-001",
-    "text": "사용자 ID와 비밀번호를 통해 인증해야 한다.",
-    "status": "Approved"
+    "id": "REQ-003",
+    "parentId": "REQ-002",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-004",
+    "parentId": "REQ-003",
+    "text": "새로운 하위 요구사항을 입력하세요.",
+    "status": "Draft"
+  },
+  {
+    "id": "REQ-005",
+    "parentId": null,
+    "text": "새로운 요구사항을 입력하세요.",
+    "status": "Draft"
   }
 ]
