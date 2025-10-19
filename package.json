@@ -9,7 +9,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+      "onStartupFinished"
+  ],
   "main": "./reqs-editor/src/extension.js",
   "contributes": {
     "customEditors": [
@@ -26,11 +28,9 @@
     }]
   },
   "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test",
-    "build": "cd my-react-app && npm run build",
-    "package": "npm run build && vsce package"
+    "build:web": "cd reqs-editor/my-react-app && npm run build",
+    "copy:web": "xcopy reqs-editor\\my-react-app\\dist reqs-editor\\src\\webview\\dist /E /I /Y",
+    "package": "npm run build:web && npm run copy:web && vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.105.0",
