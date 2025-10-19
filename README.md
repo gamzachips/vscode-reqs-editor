@@ -25,7 +25,7 @@ React 기반의 Webview UI와 VS Code API를 결합하여,
 
 ## 설치 및 실행 방법 
 
-1.  reqs-editor-[version].vsix 확장자 파일을 다운로드합니다. 
+1.  reqs-editor-[version].vsix 파일을 다운로드합니다. 
 
 2. VSCode에서 Ctrl + Shift + P 를 누릅니다.
 
